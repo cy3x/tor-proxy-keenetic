@@ -3,7 +3,7 @@
 echo "Installation started"
 echo "\nInstalling the necessary packages from Entware repository"
 opkg update
-opkg install ipset dnsmasq-full iptables tor tor-geoip bind-dig cron mc
+opkg install ipset dnsmasq-full iptables tor tor-geoip bind-dig
 echo "Packages was intalled"
 
 echo "Start copying config files"
@@ -37,7 +37,4 @@ chmod +x /opt/etc/init.d/S99proxylist
 
 echo "Scripts was intalled"
 
-echo "Adding task to crontab"
-echo -e "\n00 01 * * * root /opt/bin/proxylist_ipset.sh" >> /opt/etc/crontab
-echo "Task was added"
 echo -e "Installation completed.\nNow you need to connect to the router using telnet(port 23) or ssh (port 21) and enter the following commands:\n opkg dns-override \n system configuration save \n system reboot \n"
