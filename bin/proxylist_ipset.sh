@@ -1,4 +1,5 @@
 #!/bin/sh
+
 until ADDRS=$(dig +short google.com @localhost) && [ -n "$ADDRS" ] > /dev/null 2>&1; do sleep 5; done
 while read line || [ -n "$line" ]; do
   [ -z "$line" ] && continue
